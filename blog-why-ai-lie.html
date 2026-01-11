@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Why AI Lie? - From Noise to Narrative: Tracing the Origins of
+      Hallucinations in Transformers Summary
+    </title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-light bg-white border-bottom fixed-top">
+      <div class="container-fluid px-4">
+        <a class="navbar-brand fw-semibold" href="index.html">Ting Bai</a>
+        <div class="ms-auto">
+          <a class="nav-link d-inline" href="blog.html">Blog</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container" style="max-width: 800px; padding-top: 120px">
+      <h1>
+        Why AI Lie? - From Noise to Narrative: Tracing the Origins of
+        Hallucinations in Transformers Summary
+      </h1>
+      <p class="text-muted">11 January 2026</p>
+
+      <h2>Summary</h2>
+
+      <p>
+        As generative AI systems become widely adapted in the society, deeper
+        insight into occasional volatility such as hallucinations poses an acute
+        need, especially in high-stakes areas. The research paper "From Noise to
+        Narrative: Tracing the Origins of Hallucinations in Transformers" by
+        Suresh et al. (2025) explores this concept. The purpose of this study is
+        to show when a transformer received ambiguous input, how and when
+        hallucinations arise.
+      </p>
+
+      <p>
+        In the experiment, pre-trained transformer models in both vision(ViT)
+        and language(Gemma-2B) is used, internal residual stream activations are
+        extracted at multiple layers. Then, the authors train sparse
+        autoencoders(SAEs) as probes on residual stream activations. SAEs
+        trained from pure noise is employed to rule out the possibility that SAE
+        features learned from semantic input data, as well as SAEs trained
+        conventionally for smaller/larger models for comparison. The authors
+        systematically degrade inputs by shuffling image patches adn text
+        n-grams. The number of active SAE features across layers is measured.
+        Finally, hallucination scores are measured using HHEM-2.1.
+      </p>
+
+      <p>The results are:</p>
+      <ol>
+        <li>Semantic concepts emerge even with noise-trained SAEs.</li>
+        <li>
+          The number of active SAE features increases as input structure is
+          degraded, peaking in middle layers.
+        </li>
+        <li>
+          Hallucination likelihood can be predicted from SAE feature activations
+          extracted before output generation.
+        </li>
+        <li>
+          Suppressing hallucination-associated features reduces hallucinations.
+        </li>
+      </ol>
+
+      <p>
+        The results above lead the authors to draw the following conclusions:
+      </p>
+      <ol>
+        <li>
+          Transformers activate semantic concepts in middle layers, reflecting
+          model priors.
+        </li>
+        <li>
+          Transformers impose meaning rather than passively extracting it.
+        </li>
+        <li>Hallucination can be predicted before output generation.</li>
+      </ol>
+
+      <h2>Analysis</h2>
+
+      <p>
+        The experiment used pure noised trained SAEs, which isolate the input
+        and model priors. It also used gradual degradation of input structure to
+        observe concept expansion. It covers both vision and language
+        transformer models, which generalise the theory well. Further,
+        Hallucination signals are found in middle layer representations, which
+        shows hallucination is a representation level phenomenon.
+      </p>
+
+      <p>
+        There are also some limitations in this research paper. Noise trained
+        SAEs do not rule out architectual priors, training object effects, only
+        SAE training bias. Features are labeled via top activating examples and
+        human inspection, which introduces interpretive bias. Hallucinations are
+        evaluated singualy using a language model. SAE feature capture some
+        machanisms, but not the full process.
+      </p>
+
+      <p>
+        Despect the limitations, the paper is still relevant and essential when
+        our society are in the beginning of adapting AI into our day to day
+        life. It shows hallucinatino risk is predictable before output
+        generation. Hallucination arise mostly during middle layers. This make
+        the prevent or reduce hallucination possible. It also demonstrates
+        semantic concept appear even under pure noise, which explain why some
+        transfomers is wrong confidently. It introduced new method that training
+        SAEs on pure noise inputs. Finally, It generalizes across vision and
+        language. 
+      </p>
+    </main>
+  </body>
+</html>
