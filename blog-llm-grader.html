@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      JorGPT: An system that use LLMs to automate grading - JorGPT:
+      Instructor-Aided Grading of programming Assignments with Large Language
+      Models (LLMs) Summary
+    </title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-light bg-white border-bottom fixed-top">
+      <div class="container-fluid px-4">
+        <a class="navbar-brand fw-semibold" href="index.html">Ting Bai</a>
+        <div class="ms-auto">
+          <a class="nav-link d-inline" href="blog.html">Blog</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container" style="max-width: 800px; padding-top: 120px">
+      <h1>
+        JorGPT: An system that use LLMs to automate grading - JorGPT:
+        Instructor-Aided Grading of programming Assignments with Large Language
+        Models (LLMs) Summary
+      </h1>
+      <p class="text-muted">30 January 2026</p>
+
+      <h2>Summary</h2>
+
+      <p>
+        The authors address two main problems in manual grading: heavy
+        instructor workload and grading inconsistency. In a typical large class,
+        manual marking can exceed hundreds of hours per semester. JorGPT
+        integrates multiple commercial LLMs into a Python-based interface
+        connected to Canvas. Instructors can upload student submissions,
+        customize rubrics, select models, and review AI-generated grades and
+        feedback before releasing results.
+      </p>
+
+      <p>
+        The study evaluates 672 student submissions from a C programming course.
+        Quantitative analysis shows strong alignment between AI and instructor
+        grades. Several models achieved Pearson correlations above 0.9 with
+        human grading. A regression-based ensemble model combining multiple LLM
+        outputs achieved high predictive accuracy (adjusted R² = 0.9156, MAE ≈
+        0.46 on a 0–10 scale), indicating that AI-generated grades can closely
+        approximate instructor judgments. Validation results show that about 90%
+        of predictions differed by 0.5 points or less, which the authors
+        consider pedagogically acceptable.
+      </p>
+
+      <h2>Analysis</h2>
+
+      <p>
+        Qualitative analysis demonstrates that LLM feedback is generally clear,
+        rubric-aligned, and pedagogically useful across high-, medium-, and
+        low-quality submissions. However, limitations remain, including
+        potential grading bias, difficulties handling unconventional solutions,
+        and limited explainability.
+      </p>
+
+      <p>
+        Efficiency analysis shows substantial time and cost benefits. Automated
+        grading reduced processing time from an estimated 300+ hours of manual
+        work to minutes or hours, depending on the model. Costs per batch of
+        submissions were low, with some models operating under free tiers and
+        others costing only a few euros.
+      </p>
+
+      <p>
+        The authors conclude that LLMs are effective for semi-automated grading,
+        but emphasize the importance of human-in-the-loop supervision. They
+        recommend hybrid workflows where AI performs initial grading and
+        feedback generation, while instructors retain final authority. Future
+        work should focus on bias auditing, prompt optimization, adaptive
+        feedback, and evaluating impacts on student learning outcomes.
+      </p>
+
+      <p>Limitations:</p>
+      <ol>
+        <li>1. Limited geralizability of the dataset</li>
+        <li>2. Dependence on human grading as ground truth</li>
+        <li>3. Prompt sensitivity not expored</li>
+      </ol>
+
+      <p>
+        My thoughts: While I don't agree using generative AI to grade human work
+        because of the hallucination of ai and bias, We can learn from the
+        method: The use of correlation analysis, regression modeling,
+        cross-validation, MAE... it provides replicable frame work for
+        reliability.
+      </p>
+    </main>
+  </body>
+</html>
